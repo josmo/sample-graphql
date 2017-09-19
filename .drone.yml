@@ -20,7 +20,7 @@ pipeline:
     url: http://rancher.seattleslow.com
     secrets: [ rancher_access_key, rancher_secret_key ]
     service: gugg/sample-graphql
-    docker_image: josmo/sample-loopback-service-rest:${DRONE_BUILD_NUMBER}
+    docker_image: josmo/sample-graphql:${DRONE_BUILD_NUMBER}
     start_first: false
     confirm: true
     timeout: 260
