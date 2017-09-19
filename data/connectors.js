@@ -4,13 +4,17 @@ import grpc from 'grpc';
 import grpc_promise from 'grpc-promise';
 let PROTO_PATH = __dirname + '/../proto/employee.proto';
 let employeeService = grpc.load(PROTO_PATH).proto;
-let client = new employeeService.EmployeeService('localhost:50051',
+let client = new employeeService.EmployeeService(config.get('grpc.employeeService'),
   grpc.credentials.createInsecure());
 grpc_promise.promisifyAll(client);
 
 const Employee = {
   getById(id) {
     return fetch(config.get('endpoints.employees') + id)
+      .then(res => res.json())
+  },
+  getAll() {
+    return fetch(config.get('endpoints.employees'))
       .then(res => res.json())
   },
   getMeetingForEmployee(employeeId){

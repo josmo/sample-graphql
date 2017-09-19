@@ -1,2 +1,4 @@
 endpoints:
   employees: EMPLOYEE_ENDPOINT
+grpc:
+  employeeService: GRPC_EMPLOYEE_ENDPOINT

@@ -5,6 +5,9 @@ const resolvers = {
     employee(root, args){
       return Employee.getById(args.id);
     },
+    employees(root, args){
+      return Employee.getAll();
+    }
   },
   Employee: {
     meetings(employee){

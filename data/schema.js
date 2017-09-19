@@ -22,6 +22,7 @@ type Meeting {
 }
 type Query {
   employee(id: Int): Employee
+  employees: [Employee]
 }
 `;
 
