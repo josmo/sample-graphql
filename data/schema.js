@@ -17,6 +17,7 @@ type Meeting {
   id: Int
   title: String
   text: String
+  employeeId: Int
   employee: Employee
 }
 type Query {

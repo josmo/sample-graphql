@@ -8,15 +8,12 @@ const resolvers = {
   },
   Employee: {
     meetings(employee){
-      return [
-        { id: 1, title: 'A metting', text: 'Some text'},
-        { id: 2, title: 'Another meeting', text: 'Some other text'}
-      ];
+      return Employee.getMeetingForEmployee(employee.id);
     },
   },
   Meeting: {
-    employee(metting){
-      return { id: 1, name: 'Hello', status: 'World', age: 12 };
+    employee(meeting){
+      return Employee.getById(meeting.employeeId);
     },
   },
 };
